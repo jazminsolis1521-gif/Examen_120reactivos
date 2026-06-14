@@ -1,0 +1,134 @@
+<div id="loader">
+
+<img
+src="titulo.png"
+class="logoCarga">
+
+<h2>
+Cargando examen...
+</h2>
+
+</div>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de 120 Reactivos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<body>
+
+    <div class="contenedor">
+
+        <div
+id="inicio">
+
+            <div class="bienvenida">
+
+                <div> 
+                    <img src="titulo.png" class="titulo">
+                 </div> 
+
+
+        
+
+                <h1>Examen de 120 Reactivos</h1>
+
+                <p>
+                    Bienvenido(a). Este examen ha sido diseñado para evaluar tus
+                    conocimientos mediante 120 preguntas cuidadosamente
+                    seleccionadas.
+                </p>
+
+                <p>
+                    Dispondrás de 2 horas para completar la evaluación.
+                    Lee cada pregunta con atención y selecciona la respuesta
+                    correcta.
+                </p>
+
+                <p>
+                    Al finalizar podrás visualizar tu calificación y, si obtienes
+                    una puntuación aprobatoria, descargar tu certificado.
+                </p>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ingresa tu nombre completo"
+                >
+
+                <br>
+
+                <button onclick="iniciarExamen()">
+                    ✨ Iniciar Examen
+                </button>
+
+            </div>
+
+        </div>
+
+        <div id="examen" style="display:none;">
+
+            <div class="info">
+
+                <h3 id="temporizador">02:00:00</h3>
+
+        
+
+                <p id="contador">
+                    Pregunta 1 de 120
+                </p>
+
+            </div>
+<div class="estadisticas">
+
+    <span id="aciertosBox">
+        ✔ Aciertos: 0
+    </span>
+
+    <span id="erroresBox">
+        ✖ Errores: 0
+    </span>
+
+</div>
+
+            <div class="barra">
+                <div id="progreso"></div>
+            </div>
+
+            <h2 id="pregunta"></h2>
+
+            <div id="opciones"></div>
+
+            <button
+                class="btn-siguiente"
+                onclick="siguientePregunta()">
+                Siguiente →
+            </button>
+
+        </div>
+
+        <div id="resultado" style="display:none;"></div>
+        <canvas id="graficaResultados" width="200" height="200"></canvas>
+        
+
+    </div>
+
+    <script src="preguntas.js"></script>
+    <script src="certificado.js"></script>
+    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</body>
+
+</html>
