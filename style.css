@@ -1,0 +1,402 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#graficaResultados{
+
+    width:180px !important;
+
+    height:180px !important;
+
+    margin:25px auto;
+
+    display:block;
+
+}
+
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(
+        135deg,
+        #ffe6f0,
+        #f3e8ff,
+        #e0f2fe
+    );
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.titulo{
+    width:310px;
+    height:auto;
+    display:block;
+    margin:auto;
+}
+.contenedor{
+    width:100%;
+    max-width:900px;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.1);
+    margin:auto;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+
+.bienvenida{
+    text-align:center;
+}
+
+.logo{
+    font-size:80px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:#ff5c8a;
+    margin-bottom:20px;
+}
+
+.bienvenida p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+
+#loader{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:white;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+.logoCarga{
+
+width:150px;
+
+animation:girar 2s infinite linear;
+
+}
+
+@keyframes girar{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+
+
+.fade{
+
+    animation:aparecer .5s ease;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateX(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateX(0);
+
+    }
+
+}
+
+.estadisticas{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:15px 0;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
+
+input{
+    width:100%;
+    max-width:450px;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:#f5f5f5;
+    font-size:16px;
+    margin-top:15px;
+}
+
+button{
+    background:#ff5c8a;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+    margin-top:20px;
+}
+
+.felicidades{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#c89b3c;
+
+    animation: brillo 1.5s infinite;
+
+    margin-top:20px;
+}
+
+@keyframes brillo{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.btn-certificado{
+
+    background:#d4af37;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 25px;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    margin-top:15px;
+
+    transition:0.3s;
+}
+
+.btn-certificado:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+#temporizador{
+    color:#ff5c8a;
+}
+
+.barra{
+    width:100%;
+    height:15px;
+    background:#eee;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
+#progreso{
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        #ff5c8a,
+        #c084fc
+    );
+    transition:.4s;
+}
+
+#pregunta{
+    margin-bottom:25px;
+    color:#333;
+}
+
+.opcion{
+    width:100%;
+    padding:15px;
+    margin-bottom:12px;
+    border:none;
+    border-radius:12px;
+    background:#f7f7f7;
+    color:#333;
+    text-align:left;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.opcion:hover{
+    background:#ececec;
+}
+
+.opcion.seleccionada{
+    background:#ff5c8a;
+    color:white;
+}
+
+.btn-siguiente{
+    width:100%;
+}
+
+#resultado{
+    text-align:center;
+}
+
+.resultado-final{
+    animation:aparecer .6s ease;
+}
+
+.resultado-final h2{
+    color:#ff5c8a;
+    margin-bottom:20px;
+}
+
+.resultado-final p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+.contenedor{
+
+width:95%;
+
+padding:15px;
+
+}
+
+#pregunta{
+
+font-size:20px;
+
+}
+
+.opcion{
+
+font-size:16px;
+
+padding:14px;
+
+}
+
+button{
+
+width:100%;
+
+margin-top:10px;
+
+}
+
+.logo{
+
+width:120px;
+
+}
+
+}
+
+#historial{
+
+    margin-top:30px;
+
+}
+
+.intento{
+
+    background:white;
+
+    border-left:5px solid #d4af37;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border-radius:10px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+
+}
