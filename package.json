@@ -1,7 +1,11 @@
 {
   "name": "examen-120reactivos",
   "version": "1.0.0",
+  "dependencies": {
+    "serve": "^14.2.4",
+    "node-telegram-bot-api": "^0.66.0"
+  },
   "scripts": {
-    "start": "npx serve ."
+    "start": "serve ."
   }
 }
